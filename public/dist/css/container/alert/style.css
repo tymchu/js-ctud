@@ -1,17 +1,92 @@
-/* Error: no such file or directory
- *   ,
- * 1 | @use '../../lib/service.scss' as s;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src\container\alert\style.scss 1:1  root stylesheet */
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: no such file or directory\a   \2577 \a 1 \2502  @use '../../lib/service.scss' as s;\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\container\\alert\\style.scss 1:1  root stylesheet";
+.form {
+  width: 1000px;
+  display: flex;
+  padding: 16px;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 32px;
+}
+.form__title {
+  font-size: 20px;
+  color: #3c50eb;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+.form__subtitle {
+  font-weight: 700;
+}
+.form__content {
+  width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+}
+.form__content--main {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.form__content--buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.form__field {
+  width: 100%;
+  position: relative;
+}
+.form__label {
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transform-origin: left;
+  transition: transform 200ms;
+}
+.form__input {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 6px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: border-color 250ms;
+}
+.form__input:focus {
+  border-color: #3c50eb;
+}
+.form__input:focus + .form__label, .form__input:valid + .form__label {
+  transform: translate(0, -20px) scale(0.8);
+}
+.form__button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #3c50eb;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.form__button--alarm {
+  background: red;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.user-list li {
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
